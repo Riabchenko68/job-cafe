@@ -62,7 +62,7 @@ function Footer () {
                             </div>
 
                             <div className="col-lg-3 col-md-6 footer-info">
-                                <h3>About Moderna</h3>
+                                <h3>About Job Cafe</h3>
                                  <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
                                 <div className="social-links mt-3">
                                     <a href="google.com" className="twitter"><i className="bx bxl-twitter"></i></a>
@@ -77,7 +77,7 @@ function Footer () {
 
                 <div className="container">
                     <div className="copyright">
-                        &copy; Copyright <strong><span>Moderna</span></strong>. All Rights Reserved
+                        &copy; Copyright <strong><span>Job Cafe</span></strong>. All Rights Reserved
                     </div> 
                 </div>
             </footer>

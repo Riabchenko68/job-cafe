@@ -1,0 +1,60 @@
+.jobs .sidebar {
+  padding: 30px;
+  margin: 20px 0 60px 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  float: right;
+}
+
+.jobs .sidebar .search-form form {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 3px 10px;
+  position: relative;
+}
+
+.jobs .sidebar .search-form form input[type="text"] {
+  border: 0;
+  padding: 4px;
+  border-radius: 4px;
+  width: calc(100% - 40px);
+}
+
+.jobs .sidebar .search-form form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  padding: 0 15px;
+  margin: -1px;
+  background: #68A4C4;
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 0 4px 4px 0;
+  line-height: 0;
+}
+
+.search-butom {
+  background: #68A4C4;
+  color: #fff;
+  margin-top: 0.5em;
+  border: 0;
+  transition: 0.3s;
+  min-height: 2.5em;
+  min-width: 5em;
+}
+
+.search-butom:hover {
+  background: #77adca;
+}
+
+.serch-input {
+  outline: none;
+  margin-top: 0.8em;
+}
+
+.jobs .sidebar .search-form form button:hover {
+  background: #77adca;
+}

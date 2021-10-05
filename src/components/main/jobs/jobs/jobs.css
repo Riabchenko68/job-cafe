@@ -1,0 +1,94 @@
+/*Jobs*/
+  
+.jobs .entry .entry-title {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+  
+.jobs .entry .entry-title h2 {
+    color: #1e4356;
+    transition: 0.3s;
+}
+  
+.jobs .entry .entry-meta h2:hover {
+    color: #68A4C4;
+}
+  
+.jobs .entry .entry-meta {
+    margin-bottom: 15px;
+    color: #72afce;
+    list-style-type: none;
+}
+  
+.jobs .entry .entry-meta ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+  
+  .jobs .entry .entry-meta ul li + li {
+    padding-left: 20px;
+}
+  
+.jobs .entry .entry-meta h2 {
+    color: #777777;
+    font-size: 1.5em;
+    display: inline-block;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.jobs .entry .entry-content {
+    margin-bottom: 5%;
+    padding: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin: 10px;
+}
+
+.jobs .entry .entry-content span {
+    line-height: 24px;
+    color: gray;
+}
+
+.job-description {
+    display: none;
+}
+.active {
+    display: flex;
+}
+
+.job-description-ul {
+    list-style: none;
+    margin-right: 30px;
+}
+.job-description-description {
+    font-size: 1.5rem;
+}
+.job-description-link {
+    background-color: #72afce;
+    text-decoration: none;
+    margin-top: 2em;
+    padding: 10px;
+    border-radius: 15px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.job-description-link:link {
+    color: white;
+} 
+.job-description-link:visited {
+    color: white;
+}  
+.job-description-link:hover {
+    background: #5c8fdb;
+}
+  
+.job-description-link:active {
+    background: #7167f7;
+    color: #231c49;
+}

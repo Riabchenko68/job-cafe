@@ -5,9 +5,9 @@ import './error-indicator.css';
 const ErrorIndicator = () => {
   return (
     <div className="error-indicator">
-      <span className="boom">BOOM!</span>
+      <span className="boom">No results found!</span>
       <span>
-        something has gone terribly wrong
+        Please try different search criteria
       </span>
     </div>
   );

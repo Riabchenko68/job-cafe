@@ -14,20 +14,19 @@
 .jobs-pagination li {
     margin: 0 5px;
     transition: 0.3s;
-}
-  
-.jobs-pagination li {
     color: #1e4356;
     padding: 7px 16px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+}
+
+.jobs-pagination li.hidden {
+    opacity: 0;
 }
   
 .jobs-pagination li.active, .jobs-pagination li:hover {
     background: #68A4C4;
-}
-  
-.jobs-pagination li.active, .jobs-pagination li:hover {
     color: #fff;
 }

@@ -1,14 +1,24 @@
 import React from "react";
+import { CircularProgress } from "@mui/material";
 
 import ErrorIndicator from "./error-indicator/error-indicator";
 import Jobs from "./jobs/jobs";
+import JobRequest from "./jobs-request/job-request";
+import NavigationButton from "./navigation-button/navigation-button";
 import JobSearch from "./job-search/job-search";
 
 import './job-page.css';
 
 export default class JobPage extends React.Component {
 
+    jobRequest = new JobRequest();
+
     state = {
+        content: [],
+        loading: true,
+        error: false,
+        pageNumber: 0,
+        searchValues: {},
         hasError: false
     }
 
@@ -18,11 +28,65 @@ export default class JobPage extends React.Component {
         })
     }
 
+    onError = (err) => {
+        this.setState({
+            error: true,
+            loading: false
+        })
+    }
+
+    componentDidMount() {
+        this.getJobs();
+        window.scrollTo(0, 0)
+    }
+
+    getJobs = () => {
+        this.jobRequest.getAllJobs(this.state)
+        .then((content) => {
+            this.setState({
+                content: content,
+                loading: false,
+                error: false
+            })
+        })
+        .catch(this.onError); 
+    }
+
+    goToNextPage = () => {
+        if (this.state.pageNumber >= this.state.content.totalPages - 1) {
+            return;
+        }
+        this.setState({
+            pageNumber: this.state.pageNumber + 1
+        }, () => this.getJobs());
+        window.scrollTo(0, 0);
+    }
+
+    goToPreviousPage = () => { 
+        if (this.state.pageNumber >= 1) {
+            this.setState({
+                pageNumber: this.state.pageNumber - 1
+            }, () => this.getJobs());
+        }
+        window.scrollTo(0, 0);
+    }
+
+    onSearch = (searchValues) => {
+        this.setState({
+            pageNumber: 0
+        })
+        this.setState({ searchValues: searchValues}, () => this.getJobs());
+    }
+
+
     render() {
 
-        if (this.state.hasError) {
-            return <ErrorIndicator />
-        }
+        const { content, loading, error } = this.state;
+        
+        const errorMessage = error ? <ErrorIndicator /> : null;
+        const spinner = loading ? <CircularProgress variant="indeterminate" color="primary" sx={{ mr: 'auto', ml: 'auto', mt: '200px', mb: '200px', display: 'block' }} /> : null;
+        const jobItems = !(loading || error) ? <Jobs data={content} /> : null;
+
 
         return (
             <div>
@@ -34,11 +98,26 @@ export default class JobPage extends React.Component {
                     </div>
                 </section>
                 <section id="jobs" className="jobs">
-                    <div className="container jobs-container" data-aos="fade-up">
+                    <div className="container" data-aos="fade-up">
                         <div className="col-lg-8 entries">
-                            <Jobs /> 
+                            <div className="jobs-container">
+                                <div>
+                                    <div className="col-lg-8 entries">
+                                        {/*{notFindMessage}*/}
+                                        {errorMessage}
+                                        {spinner} 
+                                    </div>
+                                    {jobItems}
+                                    <NavigationButton 
+                                        goToNextPage={this.goToNextPage}
+                                        pageNumber={this.state.pageNumber + 1}
+                                        goToPreviousPage={this.goToPreviousPage}
+                                        totalPages={this.state.content.totalPages}
+                                        error={this.state.error}/>
+                                </div>
+                                <JobSearch onSearch={this.onSearch}/>
+                            </div>
                         </div>
-                        <JobSearch />
                     </div>
                 </section>
             </div>

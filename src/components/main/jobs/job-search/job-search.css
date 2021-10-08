@@ -16,7 +16,8 @@
   border: 0;
   padding: 4px;
   border-radius: 4px;
-  width: calc(100% - 40px);
+  width: calc(100% - 20px);
+  outline: none;
 }
 
 .jobs .sidebar .search-form form button {
@@ -40,6 +41,7 @@
   background: #68A4C4;
   color: #fff;
   margin-top: 0.5em;
+  margin-right: 10px;
   border: 0;
   transition: 0.3s;
   min-height: 2.5em;

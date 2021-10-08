@@ -5,9 +5,6 @@ import './navbar.css';
 
 export default function NavBar () {
 
-    
-
-
    const navBarItem = [
         { name: 'Home', className: 'active', link: '/', id: 1 },
         { name: 'About', className: '', link: '/about', id: 2 },

@@ -28,12 +28,6 @@
     transition: 0.3s;
 }
 
-.navbar a i, .navbar a:focus i {
-    font-size: 12px;
-    line-height: 0;
-    margin-left: 5px;
-}
-
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
     color: #a2cce3;
 }

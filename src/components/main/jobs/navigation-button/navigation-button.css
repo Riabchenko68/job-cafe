@@ -1,6 +1,6 @@
 .jobs-pagination {
     color: #387ea2;
-    margin-left: 23em;
+    margin-left: 10em;
     margin-bottom: 50px;
 }
   
@@ -14,8 +14,6 @@
 .jobs-pagination li {
     margin: 0 5px;
     transition: 0.3s;
-    color: #1e4356;
-    padding: 7px 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,6 +25,5 @@
 }
   
 .jobs-pagination li.active, .jobs-pagination li:hover {
-    background: #68A4C4;
     color: #fff;
 }

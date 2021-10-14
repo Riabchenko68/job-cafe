@@ -3,7 +3,6 @@ import React from "react";
 import Counter from "../counter/counter";
 import HeroSection from "../hero-section";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './main.css';
 
 function Main () {

@@ -3,7 +3,7 @@ import { CircularProgress } from "@mui/material";
 
 import ErrorIndicator from "./error-indicator/error-indicator";
 import Jobs from "./jobs/jobs";
-import JobRequest from "./jobs-request/job-request";
+import JobRequest from "../jobs-request/job-request";
 import NavigationButton from "./navigation-button/navigation-button";
 import JobSearch from "./job-search/job-search";
 
@@ -52,30 +52,19 @@ export default class JobPage extends React.Component {
         .catch(this.onError); 
     }
 
-    goToNextPage = () => {
-        if (this.state.pageNumber >= this.state.content.totalPages - 1) {
-            return;
-        }
+    onSearch = (searchValues) => {
+        this.setState({ 
+            searchValues: searchValues,
+            pageNumber: 0}, 
+            () => this.getJobs()
+        );
+    }
+
+    goToPage = (pageNumber) => {
         this.setState({
-            pageNumber: this.state.pageNumber + 1
+            pageNumber: pageNumber
         }, () => this.getJobs());
         window.scrollTo(0, 0);
-    }
-
-    goToPreviousPage = () => { 
-        if (this.state.pageNumber >= 1) {
-            this.setState({
-                pageNumber: this.state.pageNumber - 1
-            }, () => this.getJobs());
-        }
-        window.scrollTo(0, 0);
-    }
-
-    onSearch = (searchValues) => {
-        this.setState({
-            pageNumber: 0
-        })
-        this.setState({ searchValues: searchValues}, () => this.getJobs());
     }
 
 
@@ -102,20 +91,21 @@ export default class JobPage extends React.Component {
                         <div className="col-lg-8 entries">
                             <div className="jobs-container">
                                 <div>
+                                    <span style={{marginLeft: '3em'}}>found {this.state.content.totalElements} items</span>
                                     <div className="col-lg-8 entries">
-                                        {/*{notFindMessage}*/}
                                         {errorMessage}
                                         {spinner} 
                                     </div>
                                     {jobItems}
                                     <NavigationButton 
-                                        goToNextPage={this.goToNextPage}
-                                        pageNumber={this.state.pageNumber + 1}
-                                        goToPreviousPage={this.goToPreviousPage}
+                                        goToPage={this.goToPage}
+                                        pageNumber={this.state.pageNumber}
                                         totalPages={this.state.content.totalPages}
-                                        error={this.state.error}/>
-                                </div>
-                                <JobSearch onSearch={this.onSearch}/>
+                                    />
+                                    </div>
+                                <JobSearch 
+                                    onSearch={this.onSearch} 
+                                />
                             </div>
                         </div>
                     </div>

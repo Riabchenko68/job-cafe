@@ -6,7 +6,6 @@ export default function JobSearch ({ onSearch }) {
 
     const [ enteredText, setEnteredText ] =  useState('');
 
-
     const searchItem = [
         { name: 'position', id: 1, placeholder: 'position' },
         { name: 'location', id: 2, placeholder: 'location' },
@@ -21,10 +20,10 @@ export default function JobSearch ({ onSearch }) {
 
     function onSearchChange (e) {
         setEnteredText (e.target.elements);
-      }
+    }
 
     function onReset() {
-        setEnteredText('')
+        setEnteredText('');
     }
 
     return (

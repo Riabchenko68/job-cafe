@@ -1,6 +1,5 @@
 import React from "react";
 
-import Counter from "../counter/counter";
 import HeroSection from "../hero-section";
 
 import './main.css';
@@ -48,8 +47,6 @@ function Main () {
                         </div>
                     </div>
                 </section>
-
-                <Counter /> 
 
                 {/* Why Us Section */}
                 <section className="why-us section-bg" data-aos="fade-up" date-aos-delay="200">

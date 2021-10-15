@@ -1,4 +1,5 @@
 import React from "react";
+import parse from 'html-react-parser';
 
 import './jobs.css';
 
@@ -6,14 +7,14 @@ export default function Jobs ({ data }) {
 
     function onHandleClick (e) {
 
-        var element = document.getElementsByName(e.target.id)[0];
+        let element = document.getElementsByName(e.target.id)[0];
         if (element.className === 'job-description') {
             element.className = 'job-description active'
         } else {
             element.className = 'job-description'
         }
     }
-
+   
     return (
         <article className="entry">
             <ul className="entry-meta"> 
@@ -29,7 +30,7 @@ export default function Jobs ({ data }) {
                         <span>{item.seniority}</span><br />
                         <div className="job-description" name={item.id}>
                             <div className="entry-content">    
-                                <span>{item.description}</span><br /><br />
+                                <span>{parse(getLinkToReadMore(item.description, item.link))}</span><br /><br />
                                 <a href={item.link} target="blank" className="job-description-link">Apply now</a>
                             </div>
                         </div>
@@ -58,3 +59,13 @@ function showDate(originalDate){
 
     return newDateString;
 }
+
+function getLinkToReadMore (originalString, link) {
+
+    let readMore =  originalString.slice(originalString.search('READ MORE')).trim();
+    let newOriginalString = originalString.replace(readMore, '');
+    let readMoreLink = `<a href=${link} target="_blank">` + readMore + `</a>`;
+        
+    return newOriginalString += readMoreLink;
+}
+

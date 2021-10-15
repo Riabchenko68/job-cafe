@@ -38,6 +38,14 @@ export default class JobRequest {
             url += `&company=${searchValues.company.value}`;
         }
 
+        if(searchValues !== undefined &&
+            searchValues.description !== undefined &&
+            searchValues.description.value !== undefined &&
+            searchValues.description.value !== ''
+        ) {
+            url += `&description=${searchValues.description.value}`;
+        }
+
         url += `&sortBy=date`;
         
         return await this.getResource(url);

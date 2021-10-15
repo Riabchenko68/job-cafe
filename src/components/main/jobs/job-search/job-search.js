@@ -7,9 +7,10 @@ export default function JobSearch ({ onSearch }) {
     const [ enteredText, setEnteredText ] =  useState('');
 
     const searchItem = [
-        { name: 'position', id: 1, placeholder: 'position' },
-        { name: 'location', id: 2, placeholder: 'location' },
-        { name: 'company', id: 3, placeholder: 'company' }
+        { name: 'position', id: 1 },
+        { name: 'location', id: 2 },
+        { name: 'company', id: 3 },
+        { name: 'description', id: 4 }
     ]
 
     function submitSearchForm(e) {
@@ -29,14 +30,14 @@ export default function JobSearch ({ onSearch }) {
     return (
         <div className="col-lg-4">
             <div className="sidebar">
-
                 {/* <h3 className="sidebar-title">Search</h3>
                 <div className="sidebar-item search-form">
                     <form onSubmit={submitSearchForm}>
-                        <input type="text" name="search"/>
+                        <input type="text" name="search" value={enteredText} onChange={onSearchChange}/>
                         <button type="submit" className="search-butom">search</button>
                     </form>
                 </div> */}
+                
 
                 <h3 className="sidebar-title">Filters</h3>
                 <div className="sidebar-item">
@@ -46,7 +47,7 @@ export default function JobSearch ({ onSearch }) {
                                 key={item.id}
                                 className="serch-input"
                                 type="text"
-                                placeholder={item.placeholder}
+                                placeholder={item.name}
                                 name={item.name}
                                 value={enteredText}
                                 onChange={onSearchChange}   

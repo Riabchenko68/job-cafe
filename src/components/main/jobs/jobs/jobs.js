@@ -68,4 +68,3 @@ function getLinkToReadMore (originalString, link) {
         
     return newOriginalString += readMoreLink;
 }
-

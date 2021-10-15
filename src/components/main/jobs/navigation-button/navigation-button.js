@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 
 import './navigation-button.css';
 
-export default function NavigationButton ({ goToPage, totalPages, pageNumber}) {
+export default function NavigationButton ({ goToPage, totalPages, pageNumber }) {
 
 
     const handleChange = ( event, value ) => {
@@ -24,3 +24,4 @@ export default function NavigationButton ({ goToPage, totalPages, pageNumber}) {
         </div>
     )
 }
+

@@ -10,7 +10,7 @@ export default function JobSearch ({ onSearch }) {
         { name: 'position', id: 1 },
         { name: 'location', id: 2 },
         { name: 'company', id: 3 },
-        { name: 'description', id: 4 }
+    { name: 'description', id: 4 }
     ]
 
     function submitSearchForm(e) {
@@ -40,7 +40,7 @@ export default function JobSearch ({ onSearch }) {
                 
 
                 <h3 className="sidebar-title">Filters</h3>
-                <div className="sidebar-item">
+                <div className="sidebar-item categories">
                     <form className="search-form" onSubmit={submitSearchForm}>
                         {searchItem.map((item) => (
                             <input
@@ -53,7 +53,7 @@ export default function JobSearch ({ onSearch }) {
                                 onChange={onSearchChange}   
                             >
                             </input>
-                        ))}
+                        ))}<br />
                         <button type="submit" className="search-butom">search</button>
                         <button type="submit" className="search-butom" onClick={onReset}>reset</button>
                     </form>

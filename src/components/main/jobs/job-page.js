@@ -88,25 +88,22 @@ export default class JobPage extends React.Component {
                 </section>
                 <section id="jobs" className="jobs">
                     <div className="container" data-aos="fade-up">
-                        <div className="col-lg-8 entries">
-                            <div className="jobs-container">
-                                <div>
-                                    <span style={{marginLeft: '3em'}}>found {this.state.content.totalElements} items</span>
-                                    <div className="col-lg-8 entries">
-                                        {errorMessage}
-                                        {spinner} 
-                                    </div>
-                                    {jobItems}
+                        <div className="row">
+                            <div className="col-lg-8 entries">
+                                <span style={{marginLeft: '3em'}}>found {this.state.content.totalElements} items</span>
+                                <div className="entry-content">
+                                    {errorMessage}
+                                    {spinner} 
+                                    {jobItems} 
+                                
                                     <NavigationButton 
                                         goToPage={this.goToPage}
                                         pageNumber={this.state.pageNumber}
                                         totalPages={this.state.content.totalPages}
-                                    />
-                                    </div>
-                                <JobSearch 
-                                    onSearch={this.onSearch} 
-                                />
+                                    /> 
+                                </div>    
                             </div>
+                            <JobSearch onSearch={this.onSearch} />
                         </div>
                     </div>
                 </section>

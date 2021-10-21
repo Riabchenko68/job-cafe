@@ -1,14 +1,13 @@
-/* Header and Logo */
-
 #header {
   height: 80px;
   transition: all 0.5s;
   z-index: 997;
+  transition: all 0.5s;
   background: #1e4356;
 }
 
 #header.header-transparent {
-  background: #0d2735;
+  background: rgba(3, 43, 63);
 }
 
 #header.header-scrolled {
@@ -40,6 +39,3 @@
 #main {
   margin-top: 80px;
 }
-  
-  
-  

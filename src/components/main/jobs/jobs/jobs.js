@@ -1,5 +1,6 @@
 import React from "react";
 import parse from 'html-react-parser';
+import { BiMap } from "react-icons/bi";
 
 import './jobs.css';
 
@@ -26,7 +27,7 @@ export default function Jobs ({ data }) {
                             onClick={onHandleClick}
                         >{item.position}</h2>
                         <p style={{ color: '#255269' }}><b>{item.company}</b></p>
-                        <span className="fa fa-map-marker"> {item.location}</span><br />
+                        <span><BiMap /> {item.location}</span><br />
                         <span>{item.seniority}</span><br />
                         <div className="job-description" name={item.id}>
                             <div className="entry-content">    

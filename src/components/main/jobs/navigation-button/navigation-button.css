@@ -1,29 +1,9 @@
 .jobs-pagination {
-    color: #387ea2;
-    margin-left: 10em;
-    margin-bottom: 50px;
-}
-  
-.jobs-pagination ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-  
-.jobs-pagination li {
-    margin: 0 5px;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+    margin-left: 10em;  
 }
 
-.jobs-pagination li.hidden {
-    opacity: 0;
-}
-  
-.jobs-pagination li.active, .jobs-pagination li:hover {
-    color: #fff;
+@media (max-width: 991px) {
+    .jobs-pagination {
+        margin-left: 3em;
+    }
 }

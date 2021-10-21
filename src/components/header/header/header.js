@@ -5,6 +5,7 @@ import NavBar from "../navbar/navbar";
 
 import './header.css';
 
+
 function Header () {
     return (
         <div>

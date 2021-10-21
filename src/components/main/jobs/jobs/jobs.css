@@ -31,7 +31,7 @@
     margin: 0;
 }
   
-  .jobs .entry .entry-meta ul li + li {
+.jobs .entry .entry-meta ul li + li {
     padding-left: 20px;
 }
   

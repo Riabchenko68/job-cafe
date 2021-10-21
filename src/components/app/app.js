@@ -9,11 +9,11 @@ import About from "../main/about/about";
 import ContactUs from "../main/contact-us";
 
 import 'bootstrap/dist/css/bootstrap.css';
-import './app.css';
 import './boxicons.css';
 import '../animate/animate.css';
 import '../animate/animate.compat.css';
 import '../animate/animate.min.css';
+import './app.css';
 
 export default function App () {
 

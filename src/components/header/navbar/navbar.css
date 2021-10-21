@@ -1,9 +1,7 @@
-/* Navigation Menu */
-
 .navbar {
     padding: 0;
 }
-
+  
 .navbar ul {
     margin: 0;
     padding: 0;
@@ -22,18 +20,23 @@
     justify-content: space-between;
     padding: 10px 0 10px 30px;
     font-family: "Open Sans", sans-serif;
-    font-size: 1em;
+    font-size: 16px;
     color: #fff;
     white-space: nowrap;
     transition: 0.3s;
 }
-
+  
+.navbar a i, .navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+}
+  
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
     color: #a2cce3;
 }
-
+  
 /* Mobile Navigation */
-
 .mobile-nav-toggle {
     color: #fff;
     font-size: 28px;
@@ -42,7 +45,7 @@
     line-height: 0;
     transition: 0.5s;
 }
-
+  
 @media (max-width: 991px) {
     .mobile-nav-toggle {
         display: block;
@@ -59,16 +62,19 @@
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba(17, 38, 48, 0.9);
+    background: rgba(17, 38, 48, 0.7);
     transition: 0.3s;
 }
-
+.hidden {
+    display: none;
+}
+  
 .navbar-mobile .mobile-nav-toggle {
     position: absolute;
     top: 15px;
     right: 15px;
 }
-
+  
 .navbar-mobile ul {
     display: block;
     position: absolute;
@@ -81,18 +87,17 @@
     overflow-y: auto;
     transition: 0.3s;
 }
-
+  
 .navbar-mobile a {
     padding: 10px 20px;
     font-size: 15px;
     color: #1e4356;
 }
-
+  
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
     color: #68A4C4;
 }
-
+  
 .navbar-mobile .getstarted {
     margin: 15px;
 }
-

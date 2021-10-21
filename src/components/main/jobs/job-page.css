@@ -19,17 +19,49 @@
 /*Jobs*/
 
 .jobs {
-    padding: 20px 0 20px 0;
-}
-
-.jobs-container {
-    width: 60em;
-    display: flex;
-    justify-content: space-between;
+    padding: 40px 0 20px 0;
 }
   
 .jobs .entry {
     padding: 10px;
     margin-bottom: 10px;
-    width: 900px;
+}
+
+.jobs .entry .entry-content span {
+    line-height: 24px;
+}
+  
+.jobs .entry .entry-content blockquote {
+    overflow: hidden;
+    background-color: #fafafa;
+    padding: 60px;
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+}
+  
+.jobs .entry .entry-content blockquote span {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 0;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+}
+  
+.jobs .entry .entry-content blockquote::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: #1e4356;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.blog .entry .entry-meta {
+    margin-bottom: 15px;
+    color: #72afce;
 }

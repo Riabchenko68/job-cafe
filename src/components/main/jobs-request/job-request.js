@@ -10,7 +10,7 @@ export default class JobRequest {
         return await res.json();
     }
 
-    async getAllJobs({pageNumber, searchValues}) {
+    async getAllJobs({ pageNumber, searchValues }) {
 
         let url = `http://api.jobka.net:8081/jobs?page=${pageNumber}`;
 
@@ -44,6 +44,14 @@ export default class JobRequest {
             searchValues.description.value !== ''
         ) {
             url += `&description=${searchValues.description.value}`;
+        }
+
+        if(searchValues !== undefined &&
+            searchValues.seniority !== undefined &&
+            searchValues.seniority.value !== undefined &&
+            searchValues.seniority.value !== ''
+        ) {
+            url += `&seniority=${searchValues.seniority.value}`;
         }
 
         url += `&sortBy=date`;

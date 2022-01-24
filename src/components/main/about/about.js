@@ -6,6 +6,8 @@ import './about.css';
 
 export default function About () {
 
+    window.scrollTo(0, 0);
+
     return (
         <div>
             <section className="breadcrumbs">

@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 import './footer.css';
 
 function Footer () {
+
     return (
         <div>
             <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
@@ -30,11 +32,9 @@ function Footer () {
                             <div className="col-lg-3 col-md-6 footer-links">
                                 <h4>Useful Links</h4>
                                 <ul>
-                                    <li><i className="bx bx-chevron-right"></i>Home</li>
-                                    <li><i className="bx bx-chevron-right"></i>About us</li>
-                                    <li><i className="bx bx-chevron-right"></i>Services</li>
-                                    <li><i className="bx bx-chevron-right"></i>Terms of service</li>
-                                    <li><i className="bx bx-chevron-right"></i>Privacy policy</li>
+                                    <li><Link to='/'><i className="bx bx-chevron-right"></i>Home</Link></li>
+                                    <li><Link to='/about'><i className="bx bx-chevron-right"></i>About</Link></li>
+                                    <li><Link to='/job-page'><i className="bx bx-chevron-right"></i>Jobs</Link></li>   
                                 </ul>
                             </div>
 

@@ -1,11 +1,13 @@
 import React from "react";
-import { CircularProgress } from "@mui/material";
+import { Redirect } from 'react-router-dom';
 
+import { CircularProgress } from "@mui/material";
 import ErrorIndicator from "./error-indicator/error-indicator";
 import Jobs from "./jobs/jobs";
 import JobRequest from "../jobs-request/job-request";
 import NavigationButton from "./navigation-button/navigation-button";
 import JobSearch from "./job-search/job-search";
+import AuthService from "../../services/auth.service";
 
 import './job-page.css';
 
@@ -19,7 +21,8 @@ export default class JobPage extends React.Component {
         error: false,
         pageNumber: 0,
         searchValues: {},
-        hasError: false
+        hasError: false,
+        currentUser: AuthService.getCurrentUser()
     }
 
     componentDidCatch() {
@@ -70,6 +73,12 @@ export default class JobPage extends React.Component {
 
     render() {
 
+        const { currentUser } = this.state;
+
+        if (!currentUser) {
+            return <Redirect to="/login" />;
+        }
+    
         const { content, loading, error } = this.state;
         
         const errorMessage = error ? <ErrorIndicator /> : null;

@@ -3,6 +3,7 @@
   margin: 45px 0 10px 20px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   float: right;
+  border-radius: 8px;
 }
 
 .jobs .sidebar .search-form form {
@@ -15,9 +16,19 @@
 .jobs .sidebar .search-form form input[type="text"] {
   border: 0;
   padding: 4px;
-  border-radius: 4px;
   width: calc(100% - 20px);
   outline: none;
+}
+
+.jobs .sidebar .search-form .serch-checkbox {
+  border: 1px solid rgb(136, 133, 133);
+  border-radius: 8px;
+  margin-top: 10px;
+  padding: 6px;
+  line-height: 0.5;
+  outline: none;
+  width: 13.5rem;
+  color:rgb(136, 133, 133);
 }
 
 .jobs .sidebar .search-form form button {
@@ -33,7 +44,6 @@
   background: #68A4C4;
   color: #fff;
   transition: 0.3s;
-  border-radius: 0 4px 4px 0;
   line-height: 0;
 }
 
@@ -46,6 +56,7 @@
   transition: 0.3s;
   min-height: 2.5em;
   min-width: 5em;
+  border-radius: 8px;
 }
 
 .search-butom:hover {
@@ -55,6 +66,9 @@
 .serch-input {
   outline: none;
   margin-top: 0.8em;
+  border: 1px solid rgb(136, 133, 133);
+  border-radius: 8px;
+  padding: 5px;
 }
 
 .jobs .sidebar .search-form form button:hover {

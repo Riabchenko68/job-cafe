@@ -7,6 +7,10 @@
     color: #fff;
     font-size: 14px;
   }
+
+.active {
+    color: #a2cce3;
+}
   
   #footer .footer-newsletter {
     padding: 50px 0;
@@ -174,4 +178,6 @@
   #footer .credits a {
     color: #a2cce3;
   }
+
+
   

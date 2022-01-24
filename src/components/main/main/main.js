@@ -5,6 +5,9 @@ import HeroSection from "../hero-section";
 import './main.css';
 
 function Main () {
+
+    window.scrollTo(0, 0);
+    
     return (
         <div>
             <main id="main">

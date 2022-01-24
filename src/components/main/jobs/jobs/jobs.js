@@ -4,10 +4,9 @@ import { BiMap } from "react-icons/bi";
 
 import './jobs.css';
 
-export default function Jobs ({ data }) {
+function Jobs ({ data }) {
 
     function onHandleClick (e) {
-
         let element = document.getElementsByName(e.target.id)[0];
         if (element.className === 'job-description') {
             element.className = 'job-description active'
@@ -63,9 +62,11 @@ function showDate(originalDate){
 
 function getLinkToReadMore (originalString, link) {
 
-    let readMore =  originalString.slice(originalString.search('READ MORE')).trim();
+    let readMore =  originalString.slice(originalString.search(/\nShow full description|\nFull description/)).trim();
     let newOriginalString = originalString.replace(readMore, '');
     let readMoreLink = `<a href=${link} target="_blank">` + readMore + `</a>`;
         
     return newOriginalString += readMoreLink;
 }
+
+export default Jobs;

@@ -9,6 +9,14 @@
     list-style: none;
     align-items: center;
 }
+
+.navbar .navbar-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
   
 .navbar li {
     position: relative;
@@ -35,7 +43,7 @@
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
     color: #a2cce3;
 }
-  
+
 /* Mobile Navigation */
 .mobile-nav-toggle {
     color: #fff;
@@ -64,9 +72,6 @@
     bottom: 0;
     background: rgba(17, 38, 48, 0.7);
     transition: 0.3s;
-}
-.hidden {
-    display: none;
 }
   
 .navbar-mobile .mobile-nav-toggle {
